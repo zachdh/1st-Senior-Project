@@ -1,3 +1,5 @@
+from statistics import mode
+
 song_data = [
     {
         "title": "Groove Machine",
@@ -43,9 +45,28 @@ song_data = [
         "energy": 0.4,
         "danceability": 0.3,
         "tempo": 90,
-    },
+    }
 ]
 
 def calculateStatistics(list, identifier):
-    print('Hellooooooo')
+    total = 0
+    
+    if identifier == "mean":
+        for i in list:
+            total = total + i
+        calcMean = total / len(list)
+        return calcMean
+    if identifier == "median":
+        list.sort()
+        mid = len(list) // 2
+        res = (list[mid] + list[~mid]) / 2
+        return res
+    if identifier == "mode":
+        calcMode = mode(list)
+        return calcMode
+        
 
+
+test_list = [4, 5, 9, 9, 10, 17]
+print(calculateStatistics(test_list, "mode"))
+            
