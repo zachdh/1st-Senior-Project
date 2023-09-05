@@ -64,9 +64,4 @@ def calculateStatistics(list, identifier):
     if identifier == "mode":
         calcMode = mode(list)
         return calcMode
-        
-
-
-test_list = [4, 5, 9, 9, 10, 17]
-print(calculateStatistics(test_list, "mode"))
             
