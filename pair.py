@@ -48,6 +48,13 @@ song_data = [
     }
 ]
 
+
+i = []
+
+def collectData(song_data):
+    for song in song_data:
+        i.append(song["duration"])
+
 def calculateStatistics(list, identifier):
     total = 0
     
